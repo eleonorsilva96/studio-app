@@ -1,7 +1,7 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # Code Review Rules
 
-When the user requests a CRAFT review, analyze the requested MR / code / branch based on these five main aspects. Use exactly these categories and sub-categories.
+For every code review, including automatic pull request reviews, when the user requests a CRAFT review, analyze the requested MR / code / branch based on these five main aspects. Use exactly these categories and sub-categories.
 
 For review comments, treat these sections and sub-sections one by one. Do multiple passes with explicit focus on these subjects. In your review summary, include C, R, A, F, T one-liners that tell in one glance how well the code is crafted. Observe our other rules for writing style.
 
