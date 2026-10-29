@@ -10,8 +10,33 @@ pnpm dev
 ```
 
 The project pins pnpm in `package.json`. Commit dependency changes with
-`pnpm-lock.yaml`. For validation, run `pnpm lint`, `pnpm exec tsc --noEmit`,
-and `pnpm build`.
+`pnpm-lock.yaml`. Use Node.js 24 (`nvm use`).
+
+## Code checks and CI
+
+Run these checks before opening a pull request:
+
+```bash
+pnpm lint
+pnpm format:check
+pnpm typecheck
+pnpm build
+```
+
+Run `pnpm format` to fix formatting locally. CI only checks formatting; it does
+not commit changes. Prettier handles supported source and documentation formats;
+SQL and TOML are not checked by this setup.
+
+The workflow in `.github/workflows/ci.yml` runs four independent checks (Lint,
+Formatting, Typecheck, Build) on pull requests targeting `main` and pushes to
+`main`. It uses the pinned pnpm version, a frozen lockfile and a dependency cache.
+These checks do not exercise authentication or the database and need no Supabase
+credentials.
+
+After the workflow has run on GitHub, configure a branch ruleset for `main` in
+Settings → Rules → Rulesets. Require pull requests and successful status checks,
+then select Lint, Formatting, Typecheck and Build from this workflow. Availability
+of branch protection depends on the repository visibility and GitHub plan.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
