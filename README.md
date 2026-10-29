@@ -2,17 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+Use pnpm 10.20.0 to install dependencies and run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install --frozen-lockfile
 pnpm dev
-# or
-bun dev
 ```
+
+The project pins pnpm in `package.json`. Commit dependency changes with
+`pnpm-lock.yaml`. For validation, run `pnpm lint`, `pnpm exec tsc --noEmit`,
+and `pnpm build`.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

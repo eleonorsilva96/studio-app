@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - '@prisma/engines'
+  - prisma
+  - sharp
+  - unrs-resolver
+
+# No browser mock service worker is configured for this application.
+ignoredBuiltDependencies:
+  - msw
